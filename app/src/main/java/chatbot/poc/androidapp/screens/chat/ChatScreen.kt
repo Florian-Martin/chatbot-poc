@@ -124,7 +124,8 @@ fun ChatScreen(viewModel: SpeakViewModel) {
                             OutputMode.Transcribe -> uiState.transcription
                             OutputMode.Interpret -> uiState.botResponse
                             OutputMode.AndroidTextToSpeech,
-                            OutputMode.AiAudio-> ""
+                            OutputMode.AiAudio -> ""
+                            OutputMode.AndroidSpeechToText -> TODO()
                         },
                         color = Color.Black,
                         style = MaterialTheme.typography.bodyLarge
@@ -233,6 +234,12 @@ fun ModeSelectionButtons(
             text = "Android Text-to-Speech",
             isSelected = selectedOutputMode == OutputMode.AndroidTextToSpeech,
             onClick = { onModeSelected(OutputMode.AndroidTextToSpeech) }
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        ModeButton(
+            text = "Android Speech-to-Text",
+            isSelected = selectedOutputMode == OutputMode.AndroidSpeechToText,
+            onClick = { onModeSelected(OutputMode.AndroidSpeechToText) }
         )
         Spacer(modifier = Modifier.height(16.dp))
         ModeButton(

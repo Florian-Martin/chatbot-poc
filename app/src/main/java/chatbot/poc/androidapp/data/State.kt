@@ -41,6 +41,7 @@ sealed class OutputMode {
     data object Transcribe : OutputMode()
     data object Interpret : OutputMode()
     data object AndroidTextToSpeech : OutputMode()
+    data object AndroidSpeechToText : OutputMode()
     data object AiAudio : OutputMode()
 }
 
